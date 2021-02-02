@@ -25,22 +25,23 @@ class MySampleState extends State<MySample> {
     return MaterialApp(
       title: 'Flutter Credit Card View Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        body: SafeArea(
-          child: Column(
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: SafeArea(
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          body: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               CreditCardWidget(
                 cardNumber: cardNumber,
                 expiryDate: expiryDate,
-                cardHolderName: cardHolderName,
-                cvvCode: cvvCode,
+                cardName: cardHolderName,
+                // cvvCode: cvvCode,
                 showBackView: isCvvFocused,
                 obscureCardNumber: true,
-                obscureCardCvv: true,
+                // obscureCardCvv: true,
               ),
               Expanded(
                 child: SingleChildScrollView(
@@ -60,11 +61,11 @@ class MySampleState extends State<MySample> {
                           labelText: 'Expired Date',
                           hintText: 'XX/XX',
                         ),
-                        cvvCodeDecoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'CVV',
-                          hintText: 'XXX',
-                        ),
+                        // cvvCodeDecoration: const InputDecoration(
+                        //   border: OutlineInputBorder(),
+                        //   labelText: 'CVV',
+                        //   hintText: 'XXX',
+                        // ),
                         cardHolderDecoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Card Holder',
@@ -111,9 +112,9 @@ class MySampleState extends State<MySample> {
     setState(() {
       cardNumber = creditCardModel.cardNumber;
       expiryDate = creditCardModel.expiryDate;
-      cardHolderName = creditCardModel.cardHolderName;
-      cvvCode = creditCardModel.cvvCode;
-      isCvvFocused = creditCardModel.isCvvFocused;
+      cardHolderName = creditCardModel.cardName;
+      // cvvCode = creditCardModel.cvvCode;
+      // isCvvFocused = creditCardModel.isCvvFocused;
     });
   }
 }
