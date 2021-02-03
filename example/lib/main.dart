@@ -46,7 +46,7 @@ class MySampleState extends State<MySample> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    children: [
+                    children: <Widget>[
                       CreditCardForm(
                         formKey: formKey,
                         obscureCvv: true,

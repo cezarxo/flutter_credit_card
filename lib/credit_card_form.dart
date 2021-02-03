@@ -277,7 +277,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
                 decoration: widget.cardHolderDecoration,
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
-                validator: (value) {
+                validator: (String value) {
                   if (value.isEmpty || value.length < 3) {
                     return widget.cardNameValidationMessage;
                   }
